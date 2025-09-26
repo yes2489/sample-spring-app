@@ -33,6 +33,13 @@ public class UserController {
         return user;
     }
 
+    @PostMapping
+    public User create2(@RequestBody User user) {
+        users.add(user);
+        log.info("New user created: {}", user.getName());
+        return user;
+    }
+
     public static class User {
         private String name;
 
